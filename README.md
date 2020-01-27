@@ -6,7 +6,8 @@ AUT - SPREE - an opensourced e-commerce application. ( Refer - https://github.co
 To run the tests follow below steps :
 
 * Clone the repo - git clone <url>
-* Run - docker-compose up --build -d
+* Run - `docker-compose up --build -d`
+* Check the tests log using - `docker logs -f spree-selenium`
 
 Expected outcome -
 
