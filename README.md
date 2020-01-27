@@ -1,11 +1,14 @@
 # vodqa-shots
 This repo is a sample/POC for running python selenium tests in a docker container.
 
+##Pre-requisites 
+Make sure you have docker and docker-compose installed on your machines before running the tests.
+
 AUT - SPREE - an opensourced e-commerce application. ( Refer - https://github.com/spree/spree )
 
 To run the tests follow below steps :
 
-* Clone the repo - git clone <url>
+* Clone the repo - `git clone https://github.com/bhiravabhatla/vodqa-shots.git`
 * Run - `docker-compose up --build -d`
 * Check the tests log using - `docker logs -f spree-selenium`
 
