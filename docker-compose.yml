@@ -1,0 +1,28 @@
+services:
+    spree:
+        container_name: spree
+        image: spreecommerce/spree:3.6.4
+        ports:
+            - 3000:3000
+        networks:
+            spree_network:
+                aliases:
+                    - spree
+
+
+    spree-selenium:
+        container_name: spree-selenium
+        depends_on: 
+            - spree
+        build: .
+        ports:
+            - 4000:4000
+        privileged: true
+        command: ["./wait_for_spree.sh", "spree:3000", "--", "python3", "spree-tests.py"]
+        networks:
+            spree_network:
+                aliases:
+                    - spree_selenium
+version: "3.7"
+networks:
+    spree_network:
